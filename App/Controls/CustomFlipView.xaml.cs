@@ -38,7 +38,7 @@ namespace App.Controls
                         {
                             Width = 6,
                             Height = 6,
-                            Fill = i == 0 ? new SolidColorBrush(Colors.DarkGreen) : new SolidColorBrush(Colors.Gray),
+                            Fill = i == 0 ? new SolidColorBrush(Colors.White) : new SolidColorBrush(Colors.Gray),
                             HorizontalAlignment = HorizontalAlignment.Right,
                             Margin = new Thickness(3)
                         };
@@ -61,7 +61,7 @@ namespace App.Controls
                 {
                     var item = ellipses[i];
 
-                    item.Fill = index == i ? new SolidColorBrush(Colors.DarkGreen) : new SolidColorBrush(Colors.Gray);
+                    item.Fill = index == i ? new SolidColorBrush(Colors.White) : new SolidColorBrush(Colors.Gray);
                 }
             };
 

@@ -8,9 +8,6 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d" Loaded="MainPage_OnLoaded"
     RequestedTheme="Default">
-    <Page.Resources>
-        
-    </Page.Resources>
     <RelativePanel>
         <Pivot Name="pivot" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
               RelativePanel.AlignTopWithPanel="True"

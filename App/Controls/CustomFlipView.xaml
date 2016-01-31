@@ -27,7 +27,7 @@
                     RelativePanel.AlignBottomWithPanel="True"
                     RelativePanel.AlignLeftWithPanel="True">
 
-            <TextBlock Text="这是什么意思休息休息笑嘻嘻笑嘻嘻笑嘻嘻笑嘻嘻笑嘻嘻笑嘻嘻信息" TextWrapping="NoWrap"
+            <TextBlock Text="这是什么意思休息休息笑嘻嘻笑嘻" Foreground="White" TextWrapping="NoWrap"
                        VerticalAlignment="Center"
                        RelativePanel.AlignBottomWithPanel="True" 
                        RelativePanel.AlignLeftWithPanel="True"
