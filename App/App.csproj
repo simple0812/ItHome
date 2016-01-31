@@ -104,8 +104,11 @@
     <Compile Include="Controls\CustomFlipView.xaml.cs">
       <DependentUpon>CustomFlipView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\CustomMsg.xaml.cs">
-      <DependentUpon>CustomMsg.xaml</DependentUpon>
+    <Compile Include="Controls\RightPopup.xaml.cs">
+      <DependentUpon>RightPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TopPopup.xaml.cs">
+      <DependentUpon>TopPopup.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -147,7 +150,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\CustomMsg.xaml">
+    <Page Include="Controls\RightPopup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\TopPopup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

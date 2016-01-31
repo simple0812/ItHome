@@ -1,0 +1,24 @@
+﻿<UserControl
+    x:Class="App.Controls.RightPopup"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+    <Popup x:Name="rightPop" IsOpen="False" VerticalOffset="40" >
+        <Popup.Child>
+            <RelativePanel Background="#d22222" Width="250" >
+                <TextBlock Text="我是 Popup" x:Name="txtPop" FontSize="16" Foreground="White" RelativePanel.AlignVerticalCenterWithPanel="True" />
+            </RelativePanel>
+        </Popup.Child>
+        <Popup.ChildTransitions>
+            <TransitionCollection>
+                <EdgeUIThemeTransition Edge="Right" />
+            </TransitionCollection>
+        </Popup.ChildTransitions>
+    </Popup>
+</UserControl>

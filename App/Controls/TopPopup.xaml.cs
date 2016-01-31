@@ -17,9 +17,9 @@ using Windows.UI.Xaml.Navigation;
 
 namespace App.Controls
 {
-    public sealed partial class CustomMsg : UserControl
+    public sealed partial class TopPopup : UserControl
     {
-        public CustomMsg()
+        public TopPopup()
         {
             this.InitializeComponent();
             sbAlert.Completed += (sender, args) =>
@@ -28,9 +28,8 @@ namespace App.Controls
             };
         }
 
-        public void Alert(string text)
+        public void Show(string text)
         {
-
             pp.IsOpen = true;
 
             tbAlert.Text = text;

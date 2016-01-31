@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -7,6 +8,7 @@ using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Foundation.Metadata;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -16,6 +18,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 using App.Controls;
+using App.Utils;
 
 //“空白页”项模板在 http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409 上有介绍
 
@@ -36,7 +39,6 @@ namespace App
         {
             await ShowSystemTray();
             coverLayer.LogoAnimate.Begin();
-            new CustomMsg().Alert("hahahh呵呵呵");
         }
 
         private async Task ShowSystemTray()
@@ -52,7 +54,8 @@ namespace App
         private void Pivot_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var item = pivot.SelectedItem as PivotItem;
-            if (item != null) new CustomMsg().Alert(item.Header.ToString());
+            if (item != null) new TopPopup().Show(item.Header.ToString());
+            new RightPopup().Show();
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿<UserControl
-    x:Class="App.Controls.CustomMsg"
+    x:Class="App.Controls.TopPopup"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:App.Controls"
@@ -10,11 +10,12 @@
     d:DesignWidth="400">
 
     <UserControl.Resources>
+
         <Storyboard x:Name="sbAlert">
             <DoubleAnimationUsingKeyFrames
                 Storyboard.TargetName="borderAlert"
                 Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)"
-                Duration="0:0:2"
+                Duration="0:0:1"
                 >
                 <DoubleAnimationUsingKeyFrames.KeyFrames>
                     <LinearDoubleKeyFrame KeyTime="0:0:0.25" Value="0"></LinearDoubleKeyFrame>
@@ -27,11 +28,12 @@
     </UserControl.Resources>
 
     <Popup Name="pp" VerticalOffset="0" HorizontalOffset="0" HorizontalAlignment="Stretch">
-        <StackPanel Width="480" Background="#d22222" HorizontalAlignment="Stretch"  Height="30" Canvas.ZIndex="5" VerticalAlignment="Top" Name="borderAlert">
-            <StackPanel.RenderTransform>
+        <RelativePanel Width="480" Background="#d22222" Padding="40 0 0 0" Height="30" Canvas.ZIndex="5" VerticalAlignment="Center" Name="borderAlert">
+            <RelativePanel.RenderTransform>
                 <TranslateTransform Y="-30"></TranslateTransform>
-            </StackPanel.RenderTransform>
-            <TextBlock Text="弹出框" Name="tbAlert" VerticalAlignment="Center" Margin="40 0 0 0 "></TextBlock>
-        </StackPanel>
+            </RelativePanel.RenderTransform>
+            <TextBlock Name="tbAlert" Foreground="White" RelativePanel.AlignVerticalCenterWithPanel="True">
+            </TextBlock>
+        </RelativePanel>
     </Popup>
 </UserControl>

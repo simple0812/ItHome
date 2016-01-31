@@ -55,8 +55,8 @@ namespace App.Controls
             {
                 Debug.Write("SelectionChanged" + fv.SelectedIndex);
                 var index = fv.SelectedIndex;
-                List<Ellipse> ellipses = new List<Ellipse>();
-                Utils.TreeHelper.FindChildren<Ellipse>(ellipses, sp);
+                List<Ellipse> ellipses = Utils.TreeHelper.FindChildren<Ellipse>(sp);
+
                 for (int i = 0; i < ellipses.Count; i++)
                 {
                     var item = ellipses[i];
