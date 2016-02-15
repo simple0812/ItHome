@@ -56,7 +56,7 @@ namespace App.Utils
                 {
                     GetVisualChildCollection(child, visualCollection);
                 }
-            }
+            } 
         }
 
         public static VisualStateGroup FindVisualState(FrameworkElement element, string name)

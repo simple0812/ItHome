@@ -8,6 +8,7 @@ using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Foundation.Metadata;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -34,7 +35,20 @@ namespace App
                 Microsoft.ApplicationInsights.WindowsCollectors.Session);
             this.InitializeComponent();
             this.Suspending += OnSuspending;
-            
+        }
+
+        private void ShowSystemTray()
+        {
+            //需要删除App.xaml的RequestedTheme属性后才能自定义statusbar
+            var statusbar = "Windows.UI.ViewManagement.StatusBar";
+            if (ApiInformation.IsTypePresent(statusbar))
+            {
+                Windows.UI.ViewManagement.StatusBar statusBar = Windows.UI.ViewManagement.StatusBar.GetForCurrentView();
+                statusBar.ForegroundColor = Colors.Purple;
+                statusBar.BackgroundColor = Color.FromArgb(255, 0xd2, 0x22, 0x22);
+                statusBar.BackgroundOpacity = 1;
+                //await statusBar.ShowAsync();
+            }
         }
 
         /// <summary>
@@ -81,6 +95,7 @@ namespace App
             }
             // 确保当前窗口处于活动状态
             Window.Current.Activate();
+            ShowSystemTray();
         }
 
         /// <summary>

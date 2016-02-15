@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Foundation.Metadata;
+using Windows.UI;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -35,21 +36,10 @@ namespace App
             fvControl.ItemsSource = new List<string>() {"/Images/1.jpg", "/Images/1.jpg" , "/Images/2.jpg", "/Images/2.jpg" };
         }
 
-        private async void MainPage_OnLoaded(object sender, RoutedEventArgs e)
+        private void MainPage_OnLoaded(object sender, RoutedEventArgs e)
         {
-            await ShowSystemTray();
             coverLayer.LogoAnimate.Begin();
         }
-
-        private async Task ShowSystemTray()
-        {
-            var statusbar = "Windows.UI.ViewManagement.StatusBar";
-            if (ApiInformation.IsTypePresent(statusbar))
-            {
-                await Windows.UI.ViewManagement.StatusBar.GetForCurrentView().HideAsync();
-            }
-        }
-
 
         private void Pivot_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
